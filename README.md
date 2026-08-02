@@ -1,4 +1,4 @@
- # Mini Minecraft 2D
+# 2d-Minecraft
 
 Mini Minecraft 2D is a small browser-based mining game built with HTML, CSS, and JavaScript. It lets you explore a simple block world, break blocks, collect resources, and use a lightweight inventory system.
 
@@ -38,4 +38,4 @@ Mini Minecraft 2D is a small browser-based mining game built with HTML, CSS, and
 ## Notes
 
 This project is intentionally simple and easy to expand. You can add new blocks, improve the terrain, or build more advanced gameplay features.
-# 2d-Minecraft
+

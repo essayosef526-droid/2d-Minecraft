@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+body {
+
+  overflow: hidden;
+}
+.world {
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+     grid-template-rows: repeat(20, 1fr);
+      width: 100vw;
+      height: 100vh;
+      background-color: #87ceeb;
+       
+}
+.block {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.block.empty {
+  background: #87ceeb;
+}
+
+
+.inventory {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.inventory-title {
+  font-weight: bold;
+  margin-right: 12px;
+  align-self: center;
+}
+
+.restart-button {
+  margin-right: 12px;
+  padding: 6px 10px;
+  border: 1px solid #8c6f3a;
+  border-radius: 6px;
+  background: #f7c94a;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  transform: translateY(-1px);
+}
+
+.inventory-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #8c6f3a;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  cursor: pointer;
+}
+
+.inventory-item:hover {
+  transform: translateY(-1px);
+}
+
+.inventory-item.selected {
+  outline: 2px solid #070707;
+ 
+}
+
+
+
+.inventory-item .count {
+  font-weight: bold;
+}
+.grass {
+  background-image: url(../img/Grass_Block_29_JE2_BE2.webp);
+}
+
+
+
+.dirt {
+  background: #8b4513;
+  background-image: url(../img/Dirt_29_JE2_BE2.webp);
+}
+
+.stone {
+  background: #777;
+  background-image: url(../img/Stone_29_JE5_BE3.webp);
+}
+
+.block:hover {
+  filter: brightness(1.3);
+}
+.sky {
+  background: #87ceeb;
+}
+.wood {
+  background-image: url(../img/Oak_Log_29_JE4_BE2.webp);
+}
+.leaves {
+  background-image: url(../img/Azalea_Leaves_29_JE1.webp);
+}
+.coal{
+  background-image: url(../img/Coal_Ore_29_JE5_BE4.webp)
+}
+.iron{background-image: url(../img/Iron_Ore_29_JE6_BE4.webp)}
+.dim{background-image: url(../img/Diamond_Ore_29_JE5_BE5.webp)}
+
+
+#axe-button {
+  background-image: url(../img/Iron_Axe_JE5_BE2.webp);
+}
+
+#shovel-button {
+  background-image: url(../img/Iron_Shovel_JE2_BE1.webp);
+}
+
+#pickaxe-button {
+ 
+  background-image: url(../img/Iron_Pickaxe_JE3_BE2.webp);
+}
+#axe-button, #shovel-button, #pickaxe-button {
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 24px 24px;
+  padding-left: 38px;
+}
