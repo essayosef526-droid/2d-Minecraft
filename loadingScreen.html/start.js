@@ -20,7 +20,7 @@ const loading = setInterval(() => {
         clearInterval(loading);
 
         setTimeout(() => {
-            window.location.href = '../co/index.html';
+            window.location.href = '../co/main.html';
         }, 400);
     }
 }, 40);
