@@ -31,9 +31,11 @@ Mini Minecraft 2D is a small browser-based mining game built with HTML, CSS, and
 
 ## Project structure
 
-- `co/index.html` — the main page
-- `co/style.css` — styling for the world and UI
-- `co/script.js` — game logic, blocks, inventory, and interactions
+The project is organized into three main folders:
+
+- `co/` — the main game page, styles, and gameplay logic
+- `loadingScreen/` — the loading screen experience
+- `startscreen-done/` — the start screen interface
 
 ## Notes
 
