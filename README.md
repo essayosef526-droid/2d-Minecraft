@@ -4,7 +4,7 @@ Mini Minecraft 2D is a small browser-based mining game built with HTML, CSS, and
 
 ## Preview
 
-[Mini Minecraft 2D preview](/img/http___127.0.0.1_5500_co_index.html.png)
+![alt text](img/http___127.0.0.1_5500_co_index.html.png)
 
 ## What the project includes
 
