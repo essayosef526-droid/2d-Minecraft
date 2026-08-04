@@ -1,5 +1,8 @@
 const world = document.querySelector(".world");
 const inventoryElement = document.querySelector(".inventory");
+const music = new Audio('../img/2026-08-04 19-59-28.mp4');
+music.loop = true;
+music.play();
 
 const rows = 20;
 const columns = 40;
