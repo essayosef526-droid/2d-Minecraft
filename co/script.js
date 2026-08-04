@@ -4,7 +4,7 @@ const inventoryElement = document.querySelector(".inventory");
 const rows = 20;
 const columns = 40;
 const xy = [];
-const blockTypes = ["wood", "leaves", "grass", "dirt", "coal", "stone"];
+const blockTypes = ["wood", "leaves", "grass", "dirt", "coal", "stone", "dim", "iron"];
 const toolTypes = ["axe", "shovel", "pickaxe"];
 const inventoryTypes = [...blockTypes, ...toolTypes];
 const inventory = {
@@ -14,12 +14,17 @@ const inventory = {
   dirt: 0,
   coal: 0,
   stone: 0,
+  dim: 0,
+  iron: 0,
  
 };
 const inventoryCount = {};
 const inventoryButtons = {};
 let selectedTool = null;
-
+const soundleaves = new Audio('../img/Vine_climb3.ogg.mp3');
+const sounddirt = new Audio('../img/Rooted_Dirt_break3.ogg (1).mp3');
+const soundstone = new Audio('../img/Stone_dig3.ogg');
+const soundwood = new Audio('../img/Wood_dig2.ogg.mp3');
 function formatLabel(type) {
   return type === "pickaxe" ? "Pickaxe" : type.charAt(0).toUpperCase() + type.slice(1);
 }
@@ -43,7 +48,7 @@ function resetGame() {
   }
 }
 
-function initializeInventoryControls() {
+function InventoryControls() {
   inventoryElement.querySelectorAll(".inventory-item").forEach((button) => {
     const type = button.classList[1];
     inventoryButtons[type] = button;
@@ -69,6 +74,11 @@ function updateInventory() {
     }
     inventoryButtons[type]?.classList.toggle("selected", selectedTool === type);
   });
+
+  document.body.classList.remove("tool-axe", "tool-shovel", "tool-pickaxe");
+  if (toolTypes.includes(selectedTool)) {
+    document.body.classList.add(`tool-${selectedTool}`);
+  }
 }
 
 function getBlockType(block) {
@@ -79,7 +89,7 @@ function canBreakWithTool(tool, blockType) {
   if (!toolTypes.includes(tool)) return true;
 
   const allowed = {
-    pickaxe: ["stone", "coal"],
+    pickaxe: ["stone", "coal", "dim", "iron"],
     shovel: ["grass", "dirt"],
     axe: ["leaves", "wood"],
   };
@@ -114,7 +124,12 @@ function addBlock(row, column) {
   else if ((row === 16 && column === 3) || (row === 16 && column === 4) || (row === 16 && column === 5)) {
     block.classList.add("coal");
   }
-  
+  else if ((row === 17 && column === 20) || (row === 17&& column === 21) || (row === 17 && column === 22)) {
+    block.classList.add("dim");
+  }
+  else if ((row === 18 && column === 10) || (row === 18 && column === 11) || (row === 18 && column === 12)) {
+    block.classList.add("iron");
+  }
   else {
     block.classList.add("stone");
   }
@@ -124,7 +139,18 @@ function addBlock(row, column) {
     if (!type) return;
     if (!selectedTool || !toolTypes.includes(selectedTool)) return;
     if (!canBreakWithTool(selectedTool, type)) return;
-
+    if (type  === "leaves") {
+      soundleaves.play();
+    }
+    if ((type  === "dirt")||(type  === "grass")) {
+      sounddirt.play();
+    }
+    if ((type  === "wood")) {
+      soundwood.play();
+    }
+    if ((type  === "stone")||(type  === "coal")||(type  === "dim")||(type  === "iron")) {
+      soundstone.play();
+    }
     inventory[type] += 1;
     updateInventory();
     block.className = "block empty";
@@ -136,7 +162,18 @@ function addBlock(row, column) {
     if (blockType) return;
     if (!selectedTool || toolTypes.includes(selectedTool)) return;
     if (inventory[selectedTool] <= 0) return;
-
+    if (selectedTool  === "leaves") {
+      soundleaves.play();
+    }
+    if ((selectedTool  === "dirt")||(selectedTool  === "grass")) {
+      sounddirt.play();
+    }
+    if ((selectedTool  === "wood")) {
+      soundwood.play();
+    }
+    if ((selectedTool  === "stone")||(selectedTool  === "coal")||(selectedTool  === "dim")||(selectedTool  === "iron")) {
+      soundstone.play();
+    }
     inventory[selectedTool] -= 1;
     block.className = `block ${selectedTool}`;
     updateInventory();
@@ -146,7 +183,7 @@ function addBlock(row, column) {
   world.appendChild(block);
 }
 
-initializeInventoryControls();
+InventoryControls();
 resetGame();
 
 

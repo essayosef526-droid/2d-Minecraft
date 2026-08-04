@@ -5,8 +5,20 @@
 }
 
 body {
-
   overflow: hidden;
+  cursor: default;
+}
+
+body.tool-axe {
+  cursor: url('../img/Iron_Axe_JE5_BE2.webp') 4 4, auto;
+}
+
+body.tool-shovel {
+  cursor: url('../img/Iron_Shovel_JE2_BE1.webp') 4 4, auto;
+}
+
+body.tool-pickaxe {
+  cursor: url('../img/Iron_Pickaxe_JE3_BE2.webp') 4 4, auto;
 }
 .world {
     display: grid;
@@ -19,6 +31,9 @@ body {
 }
 .block {
   border: 1px solid rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 105% 110%;
 }
 
 .block.empty {
@@ -98,11 +113,13 @@ body {
 .dirt {
   background: #8b4513;
   background-image: url(../img/Dirt_29_JE2_BE2.webp);
+  background-size: 105% 110%;
 }
 
 .stone {
   background: #777;
   background-image: url(../img/Stone_29_JE5_BE3.webp);
+  background-size:90% 90%;
 }
 
 .block:hover {
