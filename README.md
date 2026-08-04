@@ -16,11 +16,10 @@ Mini Minecraft 2D is a small browser-based mining game built with HTML, CSS, and
 
 ## How to run
 
-1. Open the file `co/index.html` in your browser.
-2. Click blocks to mine them.
-3. Use the inventory buttons to select a block or tool.
-4. Right-click on empty space to place the selected block.
-5. Click the Restart button to start over.
+1. Click blocks to mine them.
+2. Use the inventory buttons to select a block or tool.
+3. Right-click on empty space to place the selected block.
+4. Click the Restart button to start over.
 
 ## Controls
 

@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
- 
 }
 
 body {
@@ -10,24 +8,29 @@ body {
 }
 
 body.tool-axe {
-  cursor: url('../img/Iron_Axe_JE5_BE2.webp') 4 4, auto;
+  cursor:
+    url("../img/Iron_Axe_JE5_BE2.webp") 4 4,
+    auto;
 }
 
 body.tool-shovel {
-  cursor: url('../img/Iron_Shovel_JE2_BE1.webp') 4 4, auto;
+  cursor:
+    url("../img/Iron_Shovel_JE2_BE1.webp") 4 4,
+    auto;
 }
 
 body.tool-pickaxe {
-  cursor: url('../img/Iron_Pickaxe_JE3_BE2.webp') 4 4, auto;
+  cursor:
+    url("../img/Iron_Pickaxe_JE3_BE2.webp") 4 4,
+    auto;
 }
 .world {
-    display: grid;
-    grid-template-columns: repeat(40, 1fr);
-     grid-template-rows: repeat(20, 1fr);
-      width: 100vw;
-      height: 100vh;
-      background-color: #87ceeb;
-       
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 100vw;
+  height: 100vh;
+  background-color: #87ceeb;
 }
 .block {
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -39,9 +42,7 @@ body.tool-pickaxe {
 .block.empty {
   background: #87ceeb;
 }
-
-
-.inventory {
+.inventory:not(#heart) {
   position: fixed;
   top: 0;
   left: 0;
@@ -57,7 +58,7 @@ body.tool-pickaxe {
   z-index: 10;
 }
 
-.inventory-title {
+.inventory-title{
   font-weight: bold;
   margin-right: 12px;
   align-self: center;
@@ -66,40 +67,48 @@ body.tool-pickaxe {
 .restart-button {
   margin-right: 12px;
   padding: 6px 10px;
-  border: 1px solid #8c6f3a;
-  border-radius: 6px;
-  background: #f7c94a;
-  color: #222;
+
+  font-size: 15px;
   font-weight: bold;
+  color: white;
+  background: linear-gradient(#7d7d7d, #4a4a4a);
+  border: 2px solid #000000;
+  box-shadow:
+    inset 1px 1px 0 #bcbcbc,
+    inset -1px -1px 0 #1a1a1a,
+    0 2px 0 #222;
   cursor: pointer;
 }
 
 .restart-button:hover {
-  transform: translateY(-1px);
+  background: linear-gradient(#8b8b8b, #555);
 }
 
-.inventory-item {
+.inventory-item{
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  border: 1px solid #8c6f3a;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #222;
+
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(#7d7d7d, #4a4a4a);
+  border: 1px solid #000000;
+  box-shadow:
+    inset 1px 1px 0 #bcbcbc,
+    inset -1px -1px 0 #1a1a1a,
+    0 2px 0 #222;
   cursor: pointer;
 }
 
-.inventory-item:hover {
+.inventory-item:hover{
   transform: translateY(-1px);
 }
 
 .inventory-item.selected {
-  outline: 2px solid #070707;
- 
+  outline: 2px solid #ffffff;
 }
-
-
 
 .inventory-item .count {
   font-weight: bold;
@@ -107,8 +116,6 @@ body.tool-pickaxe {
 .grass {
   background-image: url(../img/Grass_Block_29_JE2_BE2.webp);
 }
-
-
 
 .dirt {
   background: #8b4513;
@@ -119,7 +126,7 @@ body.tool-pickaxe {
 .stone {
   background: #777;
   background-image: url(../img/Stone_29_JE5_BE3.webp);
-  background-size:90% 90%;
+  background-size: 90% 90%;
 }
 
 .block:hover {
@@ -134,12 +141,15 @@ body.tool-pickaxe {
 .leaves {
   background-image: url(../img/Azalea_Leaves_29_JE1.webp);
 }
-.coal{
-  background-image: url(../img/Coal_Ore_29_JE5_BE4.webp)
+.coal {
+  background-image: url(../img/Coal_Ore_29_JE5_BE4.webp);
 }
-.iron{background-image: url(../img/Iron_Ore_29_JE6_BE4.webp)}
-.dim{background-image: url(../img/Diamond_Ore_29_JE5_BE5.webp)}
-
+.iron {
+  background-image: url(../img/Iron_Ore_29_JE6_BE4.webp);
+}
+.dim {
+  background-image: url(../img/Diamond_Ore_29_JE5_BE5.webp);
+}
 
 #axe-button {
   background-image: url(../img/Iron_Axe_JE5_BE2.webp);
@@ -150,10 +160,11 @@ body.tool-pickaxe {
 }
 
 #pickaxe-button {
- 
   background-image: url(../img/Iron_Pickaxe_JE3_BE2.webp);
 }
-#axe-button, #shovel-button, #pickaxe-button {
+#axe-button,
+#shovel-button,
+#pickaxe-button {
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 24px 24px;

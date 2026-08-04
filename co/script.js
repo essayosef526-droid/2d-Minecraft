@@ -1,8 +1,8 @@
 const world = document.querySelector(".world");
 const inventoryElement = document.querySelector(".inventory");
-const music = new Audio('../img/2026-08-04 19-59-28.mp4');
-music.loop = true;
-music.play();
+const backgroundMusic = new Audio('../img/2026-08-04 19-59-28.mp4');
+backgroundMusic.loop = true;
+backgroundMusic.play();
 
 const rows = 20;
 const columns = 40;
@@ -24,6 +24,7 @@ const inventory = {
 const inventoryCount = {};
 const inventoryButtons = {};
 let selectedTool = null;
+ const clickSound = new Audio("../img/Click_stereo.ogg.mp3");
 const soundleaves = new Audio('../img/Vine_climb3.ogg.mp3');
 const sounddirt = new Audio('../img/Rooted_Dirt_break3.ogg (1).mp3');
 const soundstone = new Audio('../img/Stone_dig3.ogg');
@@ -32,10 +33,12 @@ function formatLabel(type) {
   return type === "pickaxe" ? "Pickaxe" : type.charAt(0).toUpperCase() + type.slice(1);
 }
 
+
 function resetGame() {
   world.innerHTML = "";
   selectedTool = null;
   xy.length = 0;
+  
 
   Object.keys(inventory).forEach((type) => {
     inventory[type] = 0;
@@ -67,7 +70,12 @@ function InventoryControls() {
   });
 
   const restartButton = inventoryElement.querySelector(".restart-button");
-  restartButton?.addEventListener("click", resetGame);
+  restartButton?.addEventListener("click", () => {
+   
+    
+    clickSound.play()
+    resetGame();
+  });
 }
 
 function updateInventory() {

@@ -41,3 +41,34 @@ body {
    #start-button:hover {
     background: linear-gradient(#8b8b8b, #555);
     }
+
+.Tutorial {
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(88vw, 720px);
+    max-height: 60vh;
+    overflow: auto;
+    padding: 24px 28px;
+    background: rgba(20, 20, 20, 0.9);
+    color: white;
+    border: 3px solid #000000;
+    box-shadow:
+        inset 1px 1px 0 #bcbcbc,
+        inset -1px -1px 0 #1a1a1a,
+        0 6px 0 #111;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.Tutorial ul {
+    margin: 10px 0 6px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.Tutorial li {
+    margin-left: 16px;
+}
